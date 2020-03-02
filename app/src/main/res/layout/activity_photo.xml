@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimary"
+    tools:context=".PhotoActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ua.sunstones.sunstones_photo.GifImageView
+        android:id="@+id/gifImage_downloding"
+        scaleType="centerCrop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        android:elevation="7dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TableLayout
+            android:id="@+id/table_offers"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:paddingTop="1dp"
+            android:stretchColumns="0">
+
+            <TableRow
+                android:paddingRight="1dp"
+                android:paddingBottom="10dp">
+
+                <EditText
+                    android:id="@+id/edit_text_articul_barcode"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="1dp"
+                    android:background="@drawable/textlines"
+                    android:hint="Артикул/Штрихкод"
+                    android:textSize="25dp"></EditText>
+
+
+                <Button
+                    android:layout_width="@android:dimen/app_icon_size"
+                    android:layout_height="@android:dimen/app_icon_size"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/button_barcode"
+                    android:onClick="onClickButtonReadBarcode"></Button>
+
+                <Button
+                    android:layout_width="@android:dimen/app_icon_size"
+                    android:layout_height="@android:dimen/app_icon_size"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/button_zoom"
+                    android:onClick="onClickButtonFindArticul"></Button>
+            </TableRow>
+
+
+        </TableLayout>
+
+
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_image_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/liner_layout_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"></android.support.v4.view.ViewPager>
+
+    <LinearLayout
+        android:id="@+id/liner_layout_toolbar"
+        android:layout_width="383dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="6dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/button_camera"
+            android:layout_width="@android:dimen/app_icon_size"
+            android:layout_height="@android:dimen/app_icon_size"
+            android:layout_margin="5dp"
+            android:background="@drawable/button_camera"
+            android:onClick="onClickButtonCamera" />
+
+        <Button
+            android:id="@+id/button_galary"
+            android:layout_width="@android:dimen/app_icon_size"
+            android:layout_height="@android:dimen/app_icon_size"
+            android:layout_margin="5dp"
+            android:background="@drawable/button_photo"
+            android:onClick="onClickButtonGalary" />
+
+        <Button
+            android:id="@+id/button_zoom"
+            android:layout_width="@android:dimen/app_icon_size"
+            android:layout_height="@android:dimen/app_icon_size"
+            android:layout_margin="5dp"
+            android:background="@drawable/button_zoom"
+            android:onClick="onClickButtonZoom" />
+
+        <Button
+            android:id="@+id/button_delete_photo"
+            android:layout_width="@android:dimen/app_icon_size"
+            android:layout_height="@android:dimen/app_icon_size"
+            android:layout_margin="5dp"
+            android:background="@drawable/button_delete"
+            android:onClick="onClickButtonDeletePhoto" />
+
+        <Button
+            android:id="@+id/button_save_photos"
+            android:layout_width="@android:dimen/app_icon_size"
+            android:layout_height="@android:dimen/app_icon_size"
+            android:layout_margin="5dp"
+            android:background="@drawable/button_save"
+            android:onClick="onClickButtonSavePhotos" />
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
